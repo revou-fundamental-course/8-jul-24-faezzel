@@ -4,8 +4,115 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kalkulator BMI</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Call Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap">
 </head>
 <body>
-  
+  <!-- Top Heading -->
+  <header>
+    <h1>Website Kalkulator BMI</h1>
+    <hr>
+  </header>
+  <main>
+    <!-- Input side (left-side) -->
+    <section class="input">
+      <!-- Article Intro -->
+      <article>
+        <h2>Kalkulator BMI</h2>
+        <p>Berat badan ideal adalah impian semua orang. Tidak hanya memiliki bentuk tubuh yang menunjang penampilan, berat badan ideal juga menandakan kondisi tubuh yang sehat. Bagaimana denganmu? Yuk, hitung sekarang di kalkulator BMI.</p>
+      </article>
+      <!-- Form Input -->
+      <section class="input-form">
+        <form id="form-bmi">
+          <div>
+            <p class="label">Jenis Kelamin</p>
+            <div class="radio-gender">
+              <div class="radio-gender-group">
+                <input type="radio" id="input-man" name="gender" value="Pria" required><label for="input-man" class="radio">Pria</label>
+              </div>
+              <div class="radio-gender-group">
+                <input type="radio" id="input-woman" name="gender" value="Wanita" required><label for="input-woman" class="radio">Wanita</label>
+              </div>
+            </div>
+          </div>
+          <div>
+            <label for="input-weight">Berat Badan (kg)</label>
+            <input type="number" id="input-weight" min="0" required>
+          </div>
+          <div>
+            <label for="input-age">Usia (tahun)</label>
+            <input type="number" id="input-age" min="0" required>
+          </div>
+          <div>
+            <label for="input-height">Tinggi Badan (cm)</label>
+            <input type="number" id="input-height" min="0" required>
+          </div>
+          <div class="buttons">
+            <button type="submit" class="primary" role="button">Hitung BMI</button>
+            <button type="reset" role="button">Reset</button>
+          </div>
+        </form>
+      </section>
+      <!-- Article Features -->
+      <article>
+        <h2>Keunggulan Fitur</h2>
+        <ol>
+          <li>Menghitung berat badan</li>
+          <li>Menentukan kategori berat badan ideal atau tidak</li>
+          <li>Mempersiapkan program penurunan berat badan</li>
+        </ol>
+        <p>Kalkulator ini hanya boleh digunakan oleh orang dewasa (wanita hamil atau menyusui tidak boleh mengandalkan pembacaan BMI ini) dan tidak ada tindakan yang harus diambil berdasarkan nilainya selain berkonsultasi dengan orang yang memenuhi syarat seperti dokter.</p>
+        <p>Kalkulator akan memberi Anda gambaran tentang perbandingan berat badan Anda dengan nilai umum. Indeks Massa Tubuh (atau BMI) dihitung sebagai berat badan Anda (dalam kilogram) dibagi dengan kuadrat tinggi badan Anda (dalam meter) atau BMI = Kg/M<sup>2</sup>.</p>
+      </article>
+    </section>
+    <!-- Output side (right-side) -->
+    <section class="output">
+      <!-- Output Content Wrapper -->
+      <div id="output" class="hidden">
+        <header>
+          <h2>Hasil</h2>
+        </header>
+        <!-- Section Result -->
+        <section id="result">
+          
+        </section>
+        <!-- Article Result -->
+        <article id="article-output">
+          
+        </article>
+        <!-- Section Suggestion -->
+        <section class="suggestion">
+          <h3>Beberapa penyakit yang berasal dari kegemukan</h3>
+          <dl>
+            <dt>Diabetes</dt>
+            <dt>Hipertensi</dt>
+            <dt>Sakit Jantung</dt>
+            <dt>Osteoarthritis</dt>
+          </dl>
+          <div>
+            <a href="https://www.halodoc.com/" class="link-primary" target="_blank">Konsultasi Dokter via Aplikasi</a>
+            <a href="https://www.halodoc.com/" class="link-primary" target="_blank">Registrasi Online Sekarang</a>
+          </div>
+        </section>
+        <!-- Section Download App -->
+        <section class="download-app">
+          <h3>Download Aplikasi</h3>
+          <div class="link-image">
+            <a href="https://play.google.com/store/apps/details?id=com.linkdokter.halodoc.android&hl=in" target="_blank" title="Download di Google Play">
+              <img src="img/google-play-badge.png" alt="Download di Google Play">
+            </a>
+            <a href="https://apps.apple.com/id/app/halodoc-dokter-obat/id1067217981?l=id" target="_blank" title="Download di App Store">
+              <img src="img/app-store-badge.png" alt="Download di App Store">
+            </a>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+  <!-- Call script.js -->
+  <script src="js/scripts.js"></script>
 </body>
 </html>

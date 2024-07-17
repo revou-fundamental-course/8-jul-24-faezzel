@@ -1,1 +1,262 @@
-/* css */
+/* define root for colors */
+:root {
+  --darkBlue: #0284c7;
+  --blue: #0ea5e9;
+  --lightBlue: #e0f2fe;
+  --lightGreen: #dcfce7;
+  --lightYellow: #fef9c3;
+  --lightOrange: #ffedd5;
+  --lightRed: #fee2e2;
+  --black: #111111;
+  --white: #ffffff;
+  --gray: #f5f5f5;
+}
+
+/* START global css rules */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 1.25em auto;
+  padding: 0 2em;
+}
+
+a {
+  display: inline-flex;
+}
+
+h1,h2,h3,h4,h5,ol,ul,dl,article:has(:only-child) p,section:has(:only-child) p,p:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+p, ol, ul { font-size: 0.875rem; }
+
+ol,ul {
+  padding-left: 1.25em;
+}
+
+header:has(h1) {
+  text-align: center;
+}
+
+.hidden { display: none; }
+
+hr {
+  height: 1px;
+  background-color: var(--black);
+  border: 0;
+  margin-block: 1em;
+}
+/* END global css rules */
+
+/* START main css rules */
+main {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  margin-top: 1em;
+}
+
+section.input, section.output {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+section.input-form {
+  background-color: var(--lightBlue);
+  padding: 1em;
+  border-radius: 0.5em;
+  margin-bottom: 1em;
+}
+
+section.input-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+section.input-form p.label,
+section.input-form label:not(.radio) {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5em;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+section.input-form label.radio {
+  margin-left: 0.25em;
+}
+
+section.input-form .radio-gender {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+}
+
+section.input-form .radio-gender-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+section.input-form input[type="radio"] {
+  appearance: none;
+  margin: 0;
+  width: 1.15em;
+  height: 1.15em;
+  background-color: var(--white);
+  color: var(--blue);
+  border: 1px solid var(--black);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+section.input-form input[type="radio"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--blue);
+}
+
+section.input-form input[type="radio"]:checked:before {
+  transform: scale(1);
+}
+
+section.input-form input[type="radio"]:focus {
+  outline: max(2px, 0.15em) solid var(--blue);
+  outline-offset: max(2px, 0.15em);
+}
+
+section.input-form input[type="text"],
+section.input-form input[type="number"] {
+  padding: 0.5em;
+  border: 1px solid var(--black);
+  border-radius: 0.25em;
+}
+
+section.input-form .buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+input[type="submit"],
+button.primary,
+a.link-primary {
+  padding: 0.75em 0.875em;
+  color: var(--white);
+  background-color: var(--blue);
+  border: 1px solid var(--blue);
+  border-radius: 0.25em;
+  font-weight: 500;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+a.link-primary { margin-bottom: 0.5rem; }
+
+input[type="submit"]:hover,
+button.primary:hover,
+a.link-primary:hover {
+  background-color: var(--darkBlue);
+  border: 1px solid var(--darkBlue);
+  cursor: pointer;
+}
+
+input[type="reset"],
+button[type="reset"] {
+  padding: 0.75em 0.875em;
+  color: var(--black);
+  background-color: var(--white);
+  border: 1px solid var(--black);
+  border-radius: 0.25em;
+  font-weight: 500;
+  font-size: 0.875rem;
+}
+
+input[type="reset"]:hover,
+button[type="reset"]:hover {
+  background-color: var(--gray);
+  cursor: pointer;
+}
+
+section.result, section.suggestion {
+  padding: 1em;
+  border-radius: 0.5em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+section.suggestion { background-color: var(--lightBlue); }
+
+:is(section.result, section.suggestion, section.download-app) h3 {
+  font-weight: 400;
+  text-align: center;
+}
+
+section.result table.user-data-result {
+  width: 100%;
+  border: 0;
+  text-align: left;
+  font-size: 0.75rem;
+  margin-bottom: 1em;
+}
+
+.underweight { background-color: var(--lightYellow); }
+.normal { background-color: var(--lightGreen); }
+.overweight { background-color: var(--lightOrange); }
+.obese { background-color: var(--lightRed); }
+
+section.download-app .link-image {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1em;
+}
+
+section.download-app .link-image img {
+  max-height: 40px;
+}
+
+section.output p.big-number {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+section.suggestion dl {
+  font-size: 0.875rem;
+}
+
+.buttons-mid-content {
+  margin-bottom: 1em;
+}
+/* END main css rules */
+
+/* START Responsive css rules */
+@media (width <= 1024px) {
+  main {
+    flex-direction: column;
+  }
+  section.input, section.output {
+    width: 100%;
+  }
+  section.input-form {
+    display: flex;
+    justify-content: center;
+  }
+}
